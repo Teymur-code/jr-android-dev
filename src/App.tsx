@@ -143,11 +143,11 @@ export default function App() {
   const readinessPercentage = Math.round(projectCompletionWeight + dayCompletionWeight + assessmentWeight);
 
   const getRank = () => {
-    if (progressPercent < 15) return { name: "Kotlin Cadet", color: "text-slate-400 bg-slate-800" };
-    if (progressPercent < 35) return { name: "Compose Apprentice", color: "text-sky-400 bg-sky-950/40 border border-sky-800" };
-    if (progressPercent < 55) return { name: "Reactive Ranger", color: "text-indigo-400 bg-indigo-950/40 border border-indigo-800" };
-    if (progressPercent < 80) return { name: "Architecture Master", color: "text-amber-400 bg-amber-950/40 border border-amber-800" };
-    return { name: "Strong Junior Hero", color: "text-emerald-400 bg-emerald-950/40 border border-emerald-800" };
+    if (progressPercent < 15) return { name: "Kotlin Cadet", color: "text-slate-600 bg-slate-100 border border-slate-200" };
+    if (progressPercent < 35) return { name: "Compose Apprentice", color: "text-sky-600 bg-sky-50 border border-sky-200" };
+    if (progressPercent < 55) return { name: "Reactive Ranger", color: "text-indigo-600 bg-indigo-50 border border-indigo-200" };
+    if (progressPercent < 80) return { name: "Architecture Master", color: "text-amber-600 bg-amber-50 border border-amber-200" };
+    return { name: "Strong Junior Hero", color: "text-emerald-600 bg-emerald-50 border border-emerald-200" };
   };
 
   const currentRank = getRank();
@@ -271,52 +271,52 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0A0F1B] text-slate-100 flex flex-col font-sans selection:bg-emerald-500/30 selection:text-emerald-400">
+    <div className="min-h-screen bg-[#f8fafc] text-slate-800 flex flex-col font-sans selection:bg-emerald-100 selection:text-emerald-800">
       
       {/* Dynamic Header Dashboard */}
-      <header className="bg-[#111827]/90 border-b border-slate-800/80 px-6 py-4 sticky top-0 z-30 shadow-lg shadow-[#0A0F1B]/50 backdrop-blur-md">
+      <header className="bg-white border-b border-slate-200 px-6 py-4 sticky top-0 z-30 shadow-md shadow-slate-100/50 backdrop-blur-md">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-4">
           
           <div className="flex items-center gap-3">
-            <div className="w-12 h-12 rounded-xl bg-emerald-500 flex items-center justify-center font-bold text-slate-900 shadow-lg shadow-emerald-500/20 text-xl">
+            <div className="w-12 h-12 rounded-xl bg-emerald-500 flex items-center justify-center font-bold text-slate-900 shadow-lg shadow-emerald-500/10 text-xl">
               <Smartphone className="w-6 h-6 text-slate-900" />
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <h1 className="text-sm font-bold leading-tight uppercase tracking-widest text-emerald-400">Android Dev Academy</h1>
+                <h1 className="text-sm font-bold leading-tight uppercase tracking-widest text-emerald-600">Android Dev Academy</h1>
                 <span className={`px-2 py-0.5 rounded text-[9px] font-bold tracking-wide uppercase ${currentRank.color}`}>
                   {currentRank.name}
                 </span>
               </div>
-              <p className="text-xs text-slate-400">120-Day Interactive Roadmap designed by 15+ Yr Tech Lead</p>
+              <p className="text-xs text-slate-500">120-Day Interactive Roadmap designed by 15+ Yr Tech Lead</p>
             </div>
           </div>
 
-          <div className="flex flex-wrap items-center gap-4 md:gap-8 bg-slate-800/40 p-2.5 rounded-xl border border-slate-700/50">
+          <div className="flex flex-wrap items-center gap-4 md:gap-8 bg-slate-50 p-2.5 rounded-xl border border-slate-200">
             <div className="text-center px-2">
               <span className="block text-[10px] text-slate-500 font-bold uppercase tracking-wider">Progress</span>
-              <span className="text-sm font-extrabold text-emerald-400">{progressPercent}%</span>
+              <span className="text-sm font-extrabold text-emerald-600">{progressPercent}%</span>
             </div>
-            <div className="text-center px-2 border-l border-slate-700/50">
+            <div className="text-center px-2 border-l border-slate-200">
               <span className="block text-[10px] text-slate-500 font-bold uppercase tracking-wider">Days Done</span>
-              <span className="text-sm font-extrabold text-white">{completedDays.length} / 120</span>
+              <span className="text-sm font-extrabold text-slate-800">{completedDays.length} / 120</span>
             </div>
-            <div className="text-center px-2 border-l border-slate-700/50">
+            <div className="text-center px-2 border-l border-slate-200">
               <span className="block text-[10px] text-slate-500 font-bold uppercase tracking-wider">Commitment</span>
-              <span className="text-sm font-extrabold text-white">{studyHours} Hrs</span>
+              <span className="text-sm font-extrabold text-slate-800">{studyHours} Hrs</span>
             </div>
-            <div className="text-center px-2 border-l border-slate-700/50">
+            <div className="text-center px-2 border-l border-slate-200">
               <span className="block text-[10px] text-slate-500 font-bold uppercase tracking-wider">Junior Readiness</span>
-              <span className="text-sm font-extrabold text-emerald-400">{readinessPercentage}%</span>
+              <span className="text-sm font-extrabold text-emerald-600">{readinessPercentage}%</span>
             </div>
           </div>
 
         </div>
 
         {/* Multi-colored Progress Bar */}
-        <div className="w-full h-1.5 bg-[#0A0F1B] rounded-full mt-4 overflow-hidden relative border border-slate-800/50">
+        <div className="w-full h-1.5 bg-slate-100 rounded-full mt-4 overflow-hidden relative border border-slate-200">
           <motion.div 
-            className="absolute top-0 left-0 h-full bg-gradient-to-r from-emerald-500 via-teal-400 to-emerald-400 shadow-lg shadow-emerald-500/20"
+            className="absolute top-0 left-0 h-full bg-gradient-to-r from-emerald-500 via-teal-400 to-emerald-400 shadow-md shadow-emerald-500/10"
             initial={{ width: 0 }}
             animate={{ width: `${progressPercent}%` }}
             transition={{ duration: 0.8, ease: "easeOut" }}
@@ -331,9 +331,9 @@ export default function App() {
         <aside className="w-full lg:w-80 shrink-0 flex flex-col gap-5">
           
           {/* Months Accordion */}
-          <div className="bg-[#111827] border border-slate-800/80 rounded-2xl p-4 shadow-xl">
-            <h2 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4 flex items-center gap-1.5 pl-1">
-              <BookOpen className="w-3.5 h-3.5 text-emerald-400" />
+          <div className="bg-white border border-slate-200 rounded-2xl p-4 shadow-sm">
+            <h2 className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-4 flex items-center gap-1.5 pl-1">
+              <BookOpen className="w-3.5 h-3.5 text-emerald-600" />
               Monthly Milestones
             </h2>
             <div className="space-y-1.5">
@@ -350,18 +350,18 @@ export default function App() {
                     }}
                     className={`w-full text-left px-3.5 py-3 rounded-xl transition-all flex items-center justify-between border ${
                       isActive 
-                        ? "bg-slate-800 border-slate-700/60 shadow-md text-white" 
-                        : "bg-slate-950/40 border-transparent hover:bg-slate-900 text-slate-400 hover:text-slate-200"
+                        ? "bg-slate-100 border-slate-200 shadow-sm text-slate-800 font-bold" 
+                        : "bg-slate-50/50 border-transparent hover:bg-slate-50 text-slate-500 hover:text-slate-700"
                     }`}
                   >
                     <div className="flex items-center gap-2.5">
-                      <div className={`w-6 h-6 rounded-lg text-[10px] font-black flex items-center justify-center ${isActive ? "bg-emerald-500 text-slate-950" : "bg-slate-800 text-slate-400"}`}>
+                      <div className={`w-6 h-6 rounded-lg text-[10px] font-black flex items-center justify-center ${isActive ? "bg-emerald-500 text-slate-950" : "bg-slate-200 text-slate-600"}`}>
                         M{m.id}
                       </div>
                       <span className="text-xs font-bold truncate max-w-[150px]">{m.title}</span>
                     </div>
                     {completedInMonth > 0 && (
-                      <span className="text-[10px] font-semibold text-emerald-400 bg-emerald-950/40 px-1.5 py-0.5 rounded border border-emerald-800/30">
+                      <span className="text-[10px] font-semibold text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-200">
                         {completedInMonth}/24
                       </span>
                     )}
@@ -372,9 +372,9 @@ export default function App() {
           </div>
 
           {/* Weeks Selector inside Month */}
-          <div className="bg-[#111827] border border-slate-800/80 rounded-2xl p-4 shadow-xl">
-            <h2 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4 flex items-center gap-1.5 pl-1">
-              <Layers className="w-3.5 h-3.5 text-emerald-400" />
+          <div className="bg-white border border-slate-200 rounded-2xl p-4 shadow-sm">
+            <h2 className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-4 flex items-center gap-1.5 pl-1">
+              <Layers className="w-3.5 h-3.5 text-emerald-600" />
               Weekly Chapters
             </h2>
             <div className="space-y-1">
@@ -390,15 +390,15 @@ export default function App() {
                     }}
                     className={`w-full text-left px-3 py-2.5 rounded-lg text-xs transition-all flex items-center justify-between ${
                       isActive 
-                        ? "bg-slate-800 text-white font-bold" 
-                        : "hover:bg-slate-900 text-slate-400 hover:text-slate-300"
+                        ? "bg-slate-100 text-slate-800 font-bold" 
+                        : "hover:bg-slate-50 text-slate-500 hover:text-slate-700"
                     }`}
                   >
                     <span className="truncate max-w-[180px]">Week {w.id}: {w.theme}</span>
                     {isWeekFinished ? (
-                      <CheckCircle className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                      <CheckCircle className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
                     ) : (
-                      <div className="w-1.5 h-1.5 rounded-full bg-slate-700 shrink-0" />
+                      <div className="w-1.5 h-1.5 rounded-full bg-slate-300 shrink-0" />
                     )}
                   </button>
                 );
@@ -407,9 +407,9 @@ export default function App() {
           </div>
 
           {/* Daily Selection inside Week */}
-          <div className="bg-[#111827] border border-slate-800/80 rounded-2xl p-4 shadow-xl">
-            <h2 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4 flex items-center gap-1.5 pl-1">
-              <BookMarked className="w-3.5 h-3.5 text-emerald-400" />
+          <div className="bg-white border border-slate-200 rounded-2xl p-4 shadow-sm">
+            <h2 className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-4 flex items-center gap-1.5 pl-1">
+              <BookMarked className="w-3.5 h-3.5 text-emerald-600" />
               Daily Study Plan
             </h2>
             <div className="grid grid-cols-6 gap-1.5">
@@ -422,10 +422,10 @@ export default function App() {
                     onClick={() => setSelectedDayId(d.id)}
                     className={`h-9 rounded-lg text-xs font-extrabold flex items-center justify-center transition-all border ${
                       isActive 
-                        ? "bg-emerald-500 border-emerald-400 text-slate-950 font-black shadow-lg shadow-emerald-500/20" 
+                        ? "bg-emerald-500 border-emerald-400 text-slate-950 font-black shadow-md shadow-emerald-500/10" 
                         : isFinished 
-                        ? "bg-emerald-950/40 border-emerald-800/50 text-emerald-400" 
-                        : "bg-slate-950/30 border-slate-800 text-slate-400 hover:bg-slate-900"
+                        ? "bg-emerald-50 border-emerald-200 text-emerald-700" 
+                        : "bg-slate-50 border-slate-200 text-slate-500 hover:bg-slate-100"
                     }`}
                     title={d.title}
                   >
@@ -442,13 +442,13 @@ export default function App() {
         <section className="flex-grow flex flex-col gap-6">
           
           {/* Workspace Tabs Navigator */}
-          <div className="flex border-b border-slate-800 overflow-x-auto shrink-0 bg-[#111827] p-1.5 rounded-2xl border border-slate-800/80">
+          <div className="flex border-b border-slate-200 overflow-x-auto shrink-0 bg-white p-1.5 rounded-2xl border border-slate-200 shadow-sm">
             <button
               onClick={() => setActiveTab("lessons")}
               className={`flex items-center gap-2 px-4 py-2 text-xs font-extrabold uppercase tracking-widest rounded-xl transition-all ${
                 activeTab === "lessons" 
-                  ? "bg-emerald-500 text-slate-950 shadow-md shadow-emerald-500/20" 
-                  : "text-slate-400 hover:text-slate-200"
+                  ? "bg-emerald-500 text-slate-950 shadow-sm shadow-emerald-500/10 font-bold" 
+                  : "text-slate-500 hover:text-slate-800"
               }`}
             >
               <BookOpen className="w-3.5 h-3.5" />
@@ -458,8 +458,8 @@ export default function App() {
               onClick={() => setActiveTab("sandbox")}
               className={`flex items-center gap-2 px-4 py-2 text-xs font-extrabold uppercase tracking-widest rounded-xl transition-all ${
                 activeTab === "sandbox" 
-                  ? "bg-emerald-500 text-slate-950 shadow-md shadow-emerald-500/20" 
-                  : "text-slate-400 hover:text-slate-200"
+                  ? "bg-emerald-500 text-slate-950 shadow-sm shadow-emerald-500/10 font-bold" 
+                  : "text-slate-500 hover:text-slate-800"
               }`}
             >
               <Code className="w-3.5 h-3.5" />
@@ -469,8 +469,8 @@ export default function App() {
               onClick={() => setActiveTab("portfolio")}
               className={`flex items-center gap-2 px-4 py-2 text-xs font-extrabold uppercase tracking-widest rounded-xl transition-all ${
                 activeTab === "portfolio" 
-                  ? "bg-emerald-500 text-slate-950 shadow-md shadow-emerald-500/20" 
-                  : "text-slate-400 hover:text-slate-200"
+                  ? "bg-emerald-500 text-slate-950 shadow-sm shadow-emerald-500/10 font-bold" 
+                  : "text-slate-500 hover:text-slate-800"
               }`}
             >
               <Trophy className="w-3.5 h-3.5" />
@@ -480,8 +480,8 @@ export default function App() {
               onClick={() => setActiveTab("career")}
               className={`flex items-center gap-2 px-4 py-2 text-xs font-extrabold uppercase tracking-widest rounded-xl transition-all ${
                 activeTab === "career" 
-                  ? "bg-emerald-500 text-slate-950 shadow-md shadow-emerald-500/20" 
-                  : "text-slate-400 hover:text-slate-200"
+                  ? "bg-emerald-500 text-slate-950 shadow-sm shadow-emerald-500/10 font-bold" 
+                  : "text-slate-500 hover:text-slate-800"
               }`}
             >
               <Award className="w-3.5 h-3.5" />
@@ -490,7 +490,7 @@ export default function App() {
           </div>
 
           {/* Tab Workspaces switcher */}
-          <div className="bg-[#111827] border border-slate-800/80 rounded-3xl p-6 shadow-2xl shadow-[#0A0F1B]/60 flex-grow">
+          <div className="bg-white border border-slate-200 rounded-3xl p-6 shadow-sm flex-grow">
             
             {/* 1. Daily Lessons Tab */}
             {activeTab === "lessons" && (
@@ -499,17 +499,17 @@ export default function App() {
                 animate={{ opacity: 1, y: 0 }}
                 className="space-y-6"
               >
-                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-800/80 pb-4">
+                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-200 pb-4">
                   <div>
-                    <span className="text-[10px] uppercase font-bold text-emerald-400 bg-emerald-950/50 border border-emerald-900/50 px-2 py-0.5 rounded tracking-wide">
+                    <span className="text-[10px] uppercase font-extrabold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2.5 py-0.5 rounded tracking-wide">
                       Day {activeDay.id} of 120
                     </span>
-                    <h2 className="text-xl font-extrabold text-white mt-1.5 tracking-tight">{activeDay.title}</h2>
+                    <h2 className="text-xl font-extrabold text-slate-900 mt-1.5 tracking-tight">{activeDay.title}</h2>
                   </div>
                   <div className="flex items-center gap-3">
                     <button
                       onClick={handleExportMarkdown}
-                      className="flex items-center gap-1.5 px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-lg text-xs transition-colors border border-slate-700/50"
+                      className="flex items-center gap-1.5 px-3 py-1.5 bg-slate-50 hover:bg-slate-100 text-slate-600 hover:text-slate-800 rounded-lg text-xs transition-colors border border-slate-200"
                       title="Export Active Week to Local Markdown File"
                     >
                       <FileText className="w-3.5 h-3.5" />
@@ -519,8 +519,8 @@ export default function App() {
                       onClick={() => toggleDayCompletion(activeDay.id)}
                       className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold transition-all ${
                         completedDays.includes(activeDay.id)
-                          ? "bg-emerald-500/20 text-emerald-400 border border-emerald-500/40"
-                          : "bg-emerald-500 text-slate-950 hover:bg-emerald-400 font-extrabold"
+                          ? "bg-emerald-50 text-emerald-700 border border-emerald-200"
+                          : "bg-emerald-500 text-slate-950 hover:bg-emerald-600 font-extrabold shadow-sm"
                       }`}
                     >
                       {completedDays.includes(activeDay.id) ? (
@@ -539,104 +539,58 @@ export default function App() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-4">
                   <div className="space-y-5">
                     
-                    <div className="bg-slate-800/50 border border-slate-700/50 rounded-2xl p-5 hover:border-emerald-500/30 transition-colors shadow-lg">
-                      <h3 className="text-xs font-bold text-emerald-400 uppercase tracking-widest mb-3">Lesson Theory Focus</h3>
-                      <p className="text-xs text-slate-300 leading-relaxed">{activeDay.theory}</p>
+                    <div className="bg-slate-50 border border-slate-200 rounded-2xl p-5 hover:border-emerald-500/30 transition-colors shadow-sm">
+                      <h3 className="text-xs font-bold text-emerald-600 uppercase tracking-widest mb-3">Lesson Theory Focus</h3>
+                      <p className="text-xs text-slate-600 leading-relaxed">{activeDay.theory}</p>
                     </div>
 
-                    <div className="bg-slate-800/50 border border-slate-700/50 rounded-2xl p-5 hover:border-emerald-500/30 transition-colors shadow-lg">
-                      <h3 className="text-xs font-bold text-emerald-400 uppercase tracking-widest mb-3">In-Class Coding Exercises</h3>
-                      <p className="text-xs text-slate-300 leading-relaxed">{activeDay.practice}</p>
+                    <div className="bg-slate-50 border border-slate-200 rounded-2xl p-5 hover:border-emerald-500/30 transition-colors shadow-sm">
+                      <h3 className="text-xs font-bold text-emerald-600 uppercase tracking-widest mb-3">In-Class Coding Exercises</h3>
+                      <p className="text-xs text-slate-600 leading-relaxed">{activeDay.practice}</p>
                     </div>
 
-                    <div className="bg-slate-800/50 border border-slate-700/50 rounded-2xl p-5 hover:border-emerald-500/30 transition-colors shadow-lg">
-                      <h3 className="text-xs font-bold text-emerald-400 uppercase tracking-widest mb-2">Daily Mini Challenge</h3>
-                      <span className="inline-block text-[9px] bg-sky-950/40 text-sky-400 border border-sky-800/50 px-2 py-0.5 rounded font-extrabold uppercase mb-3">Boosts Problem Solving</span>
-                      <p className="text-xs text-slate-300 leading-relaxed">{activeDay.miniChallenge}</p>
+                    <div className="bg-slate-50 border border-slate-200 rounded-2xl p-5 hover:border-emerald-500/30 transition-colors shadow-sm">
+                      <h3 className="text-xs font-bold text-emerald-600 uppercase tracking-widest mb-2">Daily Mini Challenge</h3>
+                      <span className="inline-block text-[9px] bg-sky-50 text-sky-600 border border-sky-200 px-2 py-0.5 rounded font-extrabold uppercase mb-3">Boosts Problem Solving</span>
+                      <p className="text-xs text-slate-600 leading-relaxed">{activeDay.miniChallenge}</p>
                     </div>
 
                   </div>
 
                   <div className="space-y-5">
                     
-                    <div className="bg-emerald-500/10 border border-emerald-500/30 rounded-2xl p-5 shadow-lg">
-                      <h3 className="text-xs font-bold text-emerald-400 uppercase tracking-widest mb-3">Homework Assignment</h3>
-                      <p className="text-xs text-slate-300 leading-relaxed">{activeDay.homework}</p>
+                    <div className="bg-emerald-50 border border-emerald-200 rounded-2xl p-5 shadow-sm">
+                      <h3 className="text-xs font-bold text-emerald-700 uppercase tracking-widest mb-3">Homework Assignment</h3>
+                      <p className="text-xs text-slate-600 leading-relaxed">{activeDay.homework}</p>
                     </div>
 
-                    <div className="bg-slate-800/50 border border-slate-700/50 rounded-2xl p-5 hover:border-emerald-500/30 transition-colors shadow-lg">
-                      <h3 className="text-xs font-bold text-emerald-400 uppercase tracking-widest mb-4">Syllabus Resources</h3>
+                    <div className="bg-slate-50 border border-slate-200 rounded-2xl p-5 hover:border-emerald-500/30 transition-colors shadow-sm">
+                      <h3 className="text-xs font-bold text-emerald-600 uppercase tracking-widest mb-4">Syllabus Resources</h3>
                       <div className="space-y-3">
                         <div className="flex items-start gap-2 text-xs">
-                          <BookOpen className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                          <BookOpen className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
                           <div>
                             <span className="block text-slate-500 font-bold text-[9px] uppercase tracking-wider">Official Read</span>
-                            <span className="text-slate-200">{activeDay.readTopic}</span>
+                            <span className="text-slate-700">{activeDay.readTopic}</span>
                           </div>
                         </div>
-                        <div className="flex items-start gap-2 text-xs border-t border-slate-700/50 pt-3">
-                          <Play className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                        <div className="flex items-start gap-2 text-xs border-t border-slate-200 pt-3">
+                          <Play className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
                           <div>
                             <span className="block text-slate-500 font-bold text-[9px] uppercase tracking-wider">Recommended Video Category</span>
-                            <span className="text-slate-200">{activeDay.watchTopic}</span>
+                            <span className="text-slate-700">{activeDay.watchTopic}</span>
                           </div>
                         </div>
                       </div>
                     </div>
 
-                    <div className="bg-slate-800/30 border border-slate-700/30 rounded-2xl p-4">
-                      <div className="flex justify-between items-center text-xs text-slate-400">
-                        <span>Est Duration: <strong className="text-white">{activeDay.duration}</strong></span>
-                        <span>Goal: <strong className="text-emerald-400">Strong foundations</strong></span>
+                    <div className="bg-slate-50 border border-slate-100 rounded-2xl p-4">
+                      <div className="flex justify-between items-center text-xs text-slate-500">
+                        <span>Est Duration: <strong className="text-slate-800">{activeDay.duration}</strong></span>
+                        <span>Goal: <strong className="text-emerald-600">Strong foundations</strong></span>
                       </div>
                     </div>
 
-                  </div>
-                </div>
-
-                {/* AI Mentor Assistant - Expander */}
-                <div className="mt-8 border-t border-slate-800/80 pt-6">
-                  <div className="bg-gradient-to-br from-indigo-950/40 via-slate-900/50 to-[#111827] border border-indigo-500/30 rounded-2xl p-6 relative overflow-hidden shadow-xl">
-                    <div className="absolute top-0 right-0 p-4 opacity-5 pointer-events-none">
-                      <Sparkles className="w-36 h-36 text-white" />
-                    </div>
-                    
-                    <div className="flex items-start gap-4">
-                      <div className="w-10 h-10 rounded-xl bg-indigo-500/20 border border-indigo-500/30 flex items-center justify-center text-indigo-400 shadow-inner">
-                        <Sparkles className="w-5 h-5 text-indigo-400" />
-                      </div>
-                      <div className="flex-grow">
-                        <h3 className="text-sm font-bold text-white flex items-center gap-1.5">
-                          Interactive AI Mentor Tutorial Guide
-                          <span className="text-[10px] font-bold text-indigo-400 bg-indigo-950/80 px-2 py-0.5 rounded border border-indigo-800/40">GEMINI POWERED</span>
-                        </h3>
-                        <p className="text-xs text-slate-400 mt-1">Unlock a hyper-detailed comprehensive study guide containing explanations, real-world copyable Kotlin templates, step-by-step exercise solvers, and common pitfalls compiled by your Lead.</p>
-                        
-                        {dayLessonContent[activeDay.id] ? (
-                          <div className="mt-6 bg-[#0A0F1B]/90 rounded-2xl p-5 border border-slate-850 max-h-[500px] overflow-y-auto shadow-inner">
-                            <MarkdownView text={dayLessonContent[activeDay.id]} />
-                          </div>
-                        ) : (
-                          <button
-                            onClick={() => handleExplainDay(activeDay)}
-                            disabled={loadingLessonId === activeDay.id}
-                            className="mt-4 flex items-center gap-2 px-5 py-2.5 bg-indigo-600 text-white font-extrabold hover:bg-indigo-500 rounded-xl text-xs transition-all hover:scale-[1.01] shadow-lg shadow-indigo-500/20 disabled:opacity-50"
-                          >
-                            {loadingLessonId === activeDay.id ? (
-                              <>
-                                <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                                <span>Generating Advanced Android Guide...</span>
-                              </>
-                            ) : (
-                              <>
-                                <Sparkles className="w-4 h-4" />
-                                <span>Generate Comprehensive Mentor Guide</span>
-                              </>
-                            )}
-                          </button>
-                        )}
-                      </div>
-                    </div>
                   </div>
                 </div>
 
@@ -651,19 +605,19 @@ export default function App() {
                 className="space-y-6"
               >
                 
-                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-800/80 pb-4">
+                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-200 pb-4">
                   <div>
-                    <span className="text-[10px] uppercase font-bold text-sky-400 bg-sky-950/50 border border-sky-900/50 px-2 py-0.5 rounded tracking-wide">
+                    <span className="text-[10px] uppercase font-bold text-sky-700 bg-sky-50 border border-sky-200 px-2 py-0.5 rounded tracking-wide">
                       Week {activeWeek.id} Assessment Sandbox
                     </span>
-                    <h2 className="text-xl font-extrabold text-white mt-1.5 tracking-tight">Interactive Challenges</h2>
+                    <h2 className="text-xl font-extrabold text-slate-900 mt-1.5 tracking-tight">Interactive Challenges</h2>
                   </div>
                   <button
                     onClick={() => toggleWeekCompletion(activeWeek.id)}
                     className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold transition-all border ${
                       completedWeeks.includes(activeWeek.id)
-                        ? "bg-emerald-500/10 text-emerald-400 border-emerald-500/30"
-                        : "bg-slate-800 hover:bg-slate-700 text-slate-300 border-slate-700/50 font-bold"
+                        ? "bg-emerald-50 text-emerald-700 border-emerald-200"
+                        : "bg-slate-100 hover:bg-slate-200 text-slate-700 border-slate-200 font-bold"
                     }`}
                   >
                     {completedWeeks.includes(activeWeek.id) ? "Mark Chapter Incomplete" : "Mark Chapter Completed"}
@@ -671,9 +625,9 @@ export default function App() {
                 </div>
 
                 {/* 2.1 Interactive Multiple-Choice Quiz */}
-                <div className="bg-slate-800/50 border border-slate-700/50 rounded-2xl p-6 shadow-xl">
-                  <h3 className="text-sm font-bold text-white uppercase tracking-widest mb-5 flex items-center gap-2">
-                    <HelpCircle className="w-4 h-4 text-emerald-400" />
+                <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
+                  <h3 className="text-sm font-bold text-slate-800 uppercase tracking-widest mb-5 flex items-center gap-2">
+                    <HelpCircle className="w-4 h-4 text-emerald-600" />
                     Chapter MCQ Quiz
                   </h3>
 
@@ -684,40 +638,40 @@ export default function App() {
                       const isCorrect = selectedOpt === q.correctIndex;
 
                       return (
-                        <div key={qIdx} className="bg-[#0A0F1B]/40 border border-slate-800 rounded-2xl p-5 space-y-4 hover:border-slate-700/40 transition-colors">
-                          <h4 className="text-xs font-bold text-slate-200">
+                        <div key={qIdx} className="bg-slate-50 border border-slate-200 rounded-2xl p-5 space-y-4 hover:border-slate-300/60 transition-colors">
+                          <h4 className="text-xs font-bold text-slate-800">
                             Q{qIdx + 1}: {q.question}
                           </h4>
                           
                           <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5 pt-1">
                             {q.options.map((opt, optIdx) => {
-                              const isThisSelected = selectedOpt === optIdx;
-                              const isThisCorrect = optIdx === q.correctIndex;
-                              let buttonStyle = "bg-[#0A0F1B]/80 border-slate-800 text-slate-400 hover:bg-slate-800 hover:text-slate-200";
-                              
-                              if (selectedOpt !== undefined) {
-                                if (isThisCorrect) {
-                                  buttonStyle = "bg-emerald-500/10 border-emerald-500/40 text-emerald-400 font-bold";
-                                } else if (isThisSelected) {
-                                  buttonStyle = "bg-rose-500/10 border-rose-500/40 text-rose-400 font-bold";
-                                } else {
-                                  buttonStyle = "bg-slate-900/30 border-slate-950 text-slate-600 opacity-60";
-                                }
-                              }
+                               const isThisSelected = selectedOpt === optIdx;
+                               const isThisCorrect = optIdx === q.correctIndex;
+                               let buttonStyle = "bg-white border-slate-200 text-slate-600 hover:bg-slate-50 hover:text-slate-800";
+                               
+                               if (selectedOpt !== undefined) {
+                                 if (isThisCorrect) {
+                                   buttonStyle = "bg-emerald-50 border-emerald-200 text-emerald-700 font-bold";
+                                 } else if (isThisSelected) {
+                                   buttonStyle = "bg-rose-50 border-rose-200 text-rose-700 font-bold";
+                                 } else {
+                                   buttonStyle = "bg-slate-100 border-slate-200 text-slate-400 opacity-60";
+                                 }
+                               }
 
-                              return (
-                                <button
-                                  key={optIdx}
-                                  disabled={selectedOpt !== undefined}
-                                  onClick={() => {
-                                    setSelectedQuizAnswers(prev => ({ ...prev, [quizKey]: optIdx }));
-                                  }}
-                                  className={`w-full text-left px-4 py-2.5 rounded-xl text-xs transition-all border flex items-center justify-between ${buttonStyle}`}
-                                >
-                                  <span>{opt}</span>
-                                  {selectedOpt !== undefined && isThisCorrect && <Check className="w-3.5 h-3.5 text-emerald-400 shrink-0" />}
-                                </button>
-                              );
+                               return (
+                                 <button
+                                   key={optIdx}
+                                   disabled={selectedOpt !== undefined}
+                                   onClick={() => {
+                                     setSelectedQuizAnswers(prev => ({ ...prev, [quizKey]: optIdx }));
+                                   }}
+                                   className={`w-full text-left px-4 py-2.5 rounded-xl text-xs transition-all border flex items-center justify-between ${buttonStyle}`}
+                                 >
+                                   <span>{opt}</span>
+                                   {selectedOpt !== undefined && isThisCorrect && <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0" />}
+                                 </button>
+                               );
                             })}
                           </div>
 
@@ -725,7 +679,7 @@ export default function App() {
                             <motion.div 
                               initial={{ opacity: 0, y: 5 }}
                               animate={{ opacity: 1, y: 0 }}
-                              className={`p-4 rounded-xl text-xs leading-relaxed border ${isCorrect ? "bg-emerald-500/5 text-emerald-300 border-emerald-500/20" : "bg-rose-500/5 text-rose-300 border-rose-500/20"}`}
+                              className={`p-4 rounded-xl text-xs leading-relaxed border ${isCorrect ? "bg-emerald-50 text-emerald-700 border-emerald-200" : "bg-rose-50 text-rose-700 border-rose-200"}`}
                             >
                               <span className="font-bold block mb-1">{isCorrect ? "✨ Correct Answer!" : "❌ Incorrect Answer"}</span>
                               {q.explanation}
@@ -738,71 +692,71 @@ export default function App() {
                 </div>
 
                 {/* 2.2 Interactive Debugging Sandbox */}
-                <div className="bg-slate-800/50 border border-slate-700/50 rounded-2xl p-6 shadow-xl space-y-4">
+                <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-4">
                   <div className="flex items-center justify-between">
-                    <h3 className="text-sm font-bold text-white uppercase tracking-widest flex items-center gap-2">
+                    <h3 className="text-sm font-bold text-slate-800 uppercase tracking-widest flex items-center gap-2">
                       <AlertTriangle className="w-4 h-4 text-amber-500" />
                       Lead's Debugging Exercise: {activeWeek.debugging.title}
                     </h3>
-                    <span className="text-[10px] bg-rose-500/10 text-rose-400 border border-rose-500/30 px-2.5 py-0.5 rounded font-extrabold uppercase">
+                    <span className="text-[10px] bg-rose-50 text-rose-700 border border-rose-200 px-2.5 py-0.5 rounded font-extrabold uppercase">
                       Identify & Repair
                     </span>
                   </div>
                   
-                  <p className="text-xs text-slate-300">{activeWeek.debugging.description}</p>
+                  <p className="text-xs text-slate-600">{activeWeek.debugging.description}</p>
                   
                   <div className="grid grid-cols-1 xl:grid-cols-2 gap-4">
                     <div className="space-y-2">
-                      <span className="text-[10px] font-bold text-rose-400 uppercase tracking-wider block pl-1">🔴 Broken Code (Buggy Context)</span>
-                      <pre className="p-4 bg-rose-950/20 border border-rose-900/20 rounded-2xl text-xs font-mono text-rose-200 overflow-x-auto">
+                      <span className="text-[10px] font-bold text-rose-750 uppercase tracking-wider block pl-1">🔴 Broken Code (Buggy Context)</span>
+                      <pre className="p-4 bg-rose-50/50 border border-rose-100 rounded-2xl text-xs font-mono text-rose-900 overflow-x-auto">
                         <code>{activeWeek.debugging.brokenCode}</code>
                       </pre>
                     </div>
                     <div className="space-y-2">
-                      <span className="text-[10px] font-bold text-emerald-400 uppercase tracking-wider block pl-1">🟢 Correct Fixed Code (Idiomatic Solution)</span>
-                      <pre className="p-4 bg-emerald-950/20 border border-emerald-900/20 rounded-2xl text-xs font-mono text-emerald-200 overflow-x-auto">
+                      <span className="text-[10px] font-bold text-emerald-750 uppercase tracking-wider block pl-1">🟢 Correct Fixed Code (Idiomatic Solution)</span>
+                      <pre className="p-4 bg-emerald-50/50 border border-emerald-100 rounded-2xl text-xs font-mono text-emerald-900 overflow-x-auto">
                         <code>{activeWeek.debugging.fixedCode}</code>
                       </pre>
                     </div>
                   </div>
 
-                  <div className="p-4 bg-[#0A0F1B]/60 border border-slate-800 rounded-2xl text-xs leading-relaxed text-slate-300">
-                    <span className="font-bold text-white block mb-1">Senior Technical Explanation:</span>
+                  <div className="p-4 bg-slate-50 border border-slate-200 rounded-2xl text-xs leading-relaxed text-slate-600">
+                    <span className="font-bold text-slate-800 block mb-1">Senior Technical Explanation:</span>
                     {activeWeek.debugging.explanation}
                   </div>
                 </div>
 
                 {/* 2.3 Refactoring Sandbox */}
-                <div className="bg-slate-800/50 border border-slate-700/50 rounded-2xl p-6 shadow-xl space-y-4">
+                <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-4">
                   <div className="flex items-center justify-between">
-                    <h3 className="text-sm font-bold text-white uppercase tracking-widest flex items-center gap-2">
-                      <Code className="w-4 h-4 text-emerald-400" />
+                    <h3 className="text-sm font-bold text-slate-800 uppercase tracking-widest flex items-center gap-2">
+                      <Code className="w-4 h-4 text-emerald-600" />
                       Refactoring Studio: {activeWeek.refactoring.title}
                     </h3>
-                    <span className="text-[10px] bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 px-2.5 py-0.5 rounded font-extrabold uppercase">
+                    <span className="text-[10px] bg-emerald-50 text-emerald-700 border border-emerald-200 px-2.5 py-0.5 rounded font-extrabold uppercase">
                       Clean up Smell
                     </span>
                   </div>
                   
-                  <p className="text-xs text-slate-300">{activeWeek.refactoring.description}</p>
+                  <p className="text-xs text-slate-600">{activeWeek.refactoring.description}</p>
                   
                   <div className="grid grid-cols-1 xl:grid-cols-2 gap-4">
                     <div className="space-y-2">
-                      <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block pl-1">❌ Smelly Boilerplate Code</span>
-                      <pre className="p-4 bg-[#0A0F1B]/60 border border-slate-800/80 rounded-2xl text-xs font-mono text-slate-400 overflow-x-auto">
+                      <span className="text-[10px] font-bold text-slate-500 uppercase tracking-wider block pl-1">❌ Smelly Boilerplate Code</span>
+                      <pre className="p-4 bg-slate-50 border border-slate-200 rounded-2xl text-xs font-mono text-slate-600 overflow-x-auto">
                         <code>{activeWeek.refactoring.smellyCode}</code>
                       </pre>
                     </div>
                     <div className="space-y-2">
-                      <span className="text-[10px] font-bold text-emerald-400 uppercase tracking-wider block pl-1">✨ Clean, Idiomatic Refactor</span>
-                      <pre className="p-4 bg-emerald-950/20 border border-emerald-900/20 rounded-2xl text-xs font-mono text-slate-200 overflow-x-auto">
+                      <span className="text-[10px] font-bold text-emerald-750 uppercase tracking-wider block pl-1">✨ Clean, Idiomatic Refactor</span>
+                      <pre className="p-4 bg-emerald-50/50 border border-emerald-100 rounded-2xl text-xs font-mono text-emerald-900 overflow-x-auto">
                         <code>{activeWeek.refactoring.cleanCode}</code>
                       </pre>
                     </div>
                   </div>
 
-                  <div className="p-4 bg-[#0A0F1B]/60 border border-slate-800 rounded-2xl text-xs leading-relaxed text-slate-300">
-                    <span className="font-bold text-white block mb-1">Refactoring Notes:</span>
+                  <div className="p-4 bg-slate-50 border border-slate-200 rounded-2xl text-xs leading-relaxed text-slate-600">
+                    <span className="font-bold text-slate-800 block mb-1">Refactoring Notes:</span>
                     {activeWeek.refactoring.explanation}
                   </div>
                 </div>
@@ -819,49 +773,51 @@ export default function App() {
               >
                 
                 <div className="border-b border-slate-800/80 pb-4">
-                  <span className="text-[10px] uppercase font-bold text-amber-400 bg-amber-950/50 border border-amber-900/50 px-2 py-0.5 rounded tracking-wide">
+                  <span className="text-[10px] uppercase font-bold text-amber-700 bg-amber-50 border border-amber-200 px-2 py-0.5 rounded tracking-wide">
                     Month {selectedMonthId} Capstone Project
                   </span>
-                  <h2 className="text-xl font-extrabold text-white mt-1.5 tracking-tight">Active Portfolio Build</h2>
-                   {/* Main Project Details */}
-                <div className="bg-slate-800/50 border border-slate-700/50 rounded-2xl p-6 shadow-xl relative overflow-hidden">
+                  <h2 className="text-xl font-extrabold text-slate-900 mt-1.5 tracking-tight">Active Portfolio Build</h2>
+                </div>
+
+                {/* Main Project Details */}
+                <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm relative overflow-hidden">
                   <div className="absolute top-0 right-0 p-6 opacity-[0.03] pointer-events-none">
-                    <Trophy className="w-48 h-48 text-white" />
+                    <Trophy className="w-48 h-48 text-slate-800" />
                   </div>
                   
                   <div className="space-y-5">
                     <div>
-                      <h3 className="text-2xl font-black text-white tracking-tight">{activeMonth.portfolio.name}</h3>
-                      <p className="text-sm font-bold text-emerald-400 mt-1">{activeMonth.portfolio.tagline}</p>
-                      <p className="text-xs text-slate-300 mt-3 leading-relaxed max-w-3xl">{activeMonth.portfolio.description}</p>
+                      <h3 className="text-2xl font-black text-slate-900 tracking-tight">{activeMonth.portfolio.name}</h3>
+                      <p className="text-sm font-bold text-emerald-600 mt-1">{activeMonth.portfolio.tagline}</p>
+                      <p className="text-xs text-slate-600 mt-3 leading-relaxed max-w-3xl">{activeMonth.portfolio.description}</p>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-5 pt-3">
                       
-                      <div className="bg-[#0A0F1B]/40 border border-slate-800 rounded-2xl p-5 hover:border-slate-700/30 transition-all">
-                        <h4 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">Core Features to Implement</h4>
+                      <div className="bg-slate-50 border border-slate-200 rounded-2xl p-5 hover:border-slate-300/40 transition-all">
+                        <h4 className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-3">Core Features to Implement</h4>
                         <ul className="space-y-2.5">
                           {activeMonth.portfolio.features.map((f, idx) => (
-                            <li key={idx} className="text-xs text-slate-300 flex items-start gap-2">
-                              <Check className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                            <li key={idx} className="text-xs text-slate-600 flex items-start gap-2">
+                              <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
                               <span>{f}</span>
                             </li>
                           ))}
                         </ul>
                       </div>
 
-                      <div className="bg-[#0A0F1B]/40 border border-slate-800 rounded-2xl p-5 hover:border-slate-700/30 transition-all">
-                        <h4 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">Recommended Tech Stack</h4>
+                      <div className="bg-slate-50 border border-slate-200 rounded-2xl p-5 hover:border-slate-300/40 transition-all">
+                        <h4 className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-3">Recommended Tech Stack</h4>
                         <div className="flex flex-wrap gap-1.5">
                           {activeMonth.portfolio.techStack.map((tech, idx) => (
-                            <span key={idx} className="text-[10px] font-extrabold text-slate-300 bg-slate-800 border border-slate-700/50 px-2.5 py-1 rounded-lg">
+                            <span key={idx} className="text-[10px] font-extrabold text-slate-600 bg-white border border-slate-200 px-2.5 py-1 rounded-lg">
                               {tech}
                             </span>
                           ))}
                         </div>
 
-                        <h4 className="text-xs font-bold text-slate-400 uppercase tracking-widest mt-5 mb-3">Data Flow Diagram Architecture</h4>
-                        <p className="text-xs text-slate-300 leading-normal bg-[#0A0F1B]/80 p-3 rounded-xl border border-slate-800/80 font-mono">
+                        <h4 className="text-xs font-bold text-slate-500 uppercase tracking-widest mt-5 mb-3">Data Flow Diagram Architecture</h4>
+                        <p className="text-xs text-slate-600 leading-normal bg-white p-3 rounded-xl border border-slate-200 font-mono">
                           {activeMonth.portfolio.diagramGuide}
                         </p>
                       </div>
@@ -871,9 +827,9 @@ export default function App() {
                 </div>
 
                 {/* Interview Prep Flashcards */}
-                <div className="bg-slate-800/50 border border-slate-700/50 rounded-2xl p-6 shadow-xl">
-                  <h3 className="text-sm font-bold text-white uppercase tracking-widest mb-5 flex items-center gap-2">
-                    <MessageSquare className="w-4 h-4 text-emerald-400" />
+                <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
+                  <h3 className="text-sm font-bold text-slate-800 uppercase tracking-widest mb-5 flex items-center gap-2">
+                    <MessageSquare className="w-4 h-4 text-emerald-600" />
                     Month {selectedMonthId} Mock Interview Practice
                   </h3>
 
@@ -883,12 +839,12 @@ export default function App() {
                       const isRevealed = revealedFlashcards[qaKey];
 
                       return (
-                        <div key={idx} className="bg-[#0A0F1B]/40 border border-slate-800 rounded-2xl p-5 space-y-3 hover:border-slate-700/40 transition-colors">
+                        <div key={idx} className="bg-slate-50 border border-slate-200 rounded-2xl p-5 space-y-3 hover:border-slate-300/40 transition-colors">
                           <div className="flex items-start justify-between gap-4">
-                            <h4 className="text-xs font-bold text-slate-200">
+                            <h4 className="text-xs font-bold text-slate-800">
                               Q: {qa.question}
                             </h4>
-                            <span className="text-[9px] bg-slate-800 text-slate-400 border border-slate-700 px-2.5 py-0.5 rounded font-extrabold uppercase">
+                            <span className="text-[9px] bg-slate-100 text-slate-500 border border-slate-200 px-2.5 py-0.5 rounded font-extrabold uppercase">
                               {qa.category}
                             </span>
                           </div>
@@ -897,15 +853,15 @@ export default function App() {
                             <motion.div
                               initial={{ opacity: 0, height: 0 }}
                               animate={{ opacity: 1, height: "auto" }}
-                              className="text-xs leading-relaxed text-slate-300 bg-[#0A0F1B]/80 p-4 rounded-xl border border-slate-800"
+                              className="text-xs leading-relaxed text-slate-600 bg-white p-4 rounded-xl border border-slate-200"
                             >
-                              <strong className="text-emerald-400 block mb-1.5">Expert Response:</strong>
+                              <strong className="text-emerald-700 block mb-1.5">Expert Response:</strong>
                               {qa.answer}
                             </motion.div>
                           ) : (
                             <button
                               onClick={() => setRevealedFlashcards(prev => ({ ...prev, [qaKey]: true }))}
-                              className="px-4 py-1.5 bg-emerald-500 text-slate-950 hover:bg-emerald-400 rounded-lg text-[10px] font-bold uppercase tracking-wider transition-colors"
+                              className="px-4 py-1.5 bg-emerald-500 text-slate-950 hover:bg-emerald-600 rounded-lg text-[10px] font-bold uppercase tracking-wider transition-colors shadow-sm"
                             >
                               Reveal Answer
                             </button>
@@ -917,9 +873,9 @@ export default function App() {
                 </div>
 
                 {/* Self-Assessment Metrics */}
-                <div className="bg-slate-800/50 border border-slate-700/50 rounded-2xl p-6 shadow-xl">
-                  <h3 className="text-sm font-bold text-white uppercase tracking-widest mb-5 flex items-center gap-2">
-                    <CheckCircle className="w-4 h-4 text-emerald-400" />
+                <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
+                  <h3 className="text-sm font-bold text-slate-800 uppercase tracking-widest mb-5 flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-emerald-600" />
                     Interactive Comfort Self-Assessment
                   </h3>
 
@@ -927,10 +883,10 @@ export default function App() {
                     {Object.keys(selfAssessment).map((key) => {
                       const value = selfAssessment[key];
                       return (
-                        <div key={key} className="bg-[#0A0F1B]/40 border border-slate-800 rounded-2xl p-5 space-y-3">
-                          <div className="flex justify-between items-center text-xs font-bold uppercase tracking-wider text-slate-300">
+                        <div key={key} className="bg-slate-50 border border-slate-200 rounded-2xl p-5 space-y-3">
+                          <div className="flex justify-between items-center text-xs font-bold uppercase tracking-wider text-slate-600">
                             <span>{key}</span>
-                            <span className="text-emerald-400">{value}/5 Comfort</span>
+                            <span className="text-emerald-600">{value}/5 Comfort</span>
                           </div>
                           
                           <div className="flex gap-2.5">
@@ -940,9 +896,9 @@ export default function App() {
                                 onClick={() => {
                                   setSelfAssessment(prev => ({ ...prev, [key]: star }));
                                 }}
-                                className="flex-1 py-1 flex items-center justify-center rounded-lg border border-slate-800 bg-[#0A0F1B]/40 hover:bg-slate-800 transition-colors"
+                                className="flex-1 py-1 flex items-center justify-center rounded-lg border border-slate-200 bg-white hover:bg-slate-100 transition-colors shadow-sm"
                               >
-                                <Star className={`w-4 h-4 ${star <= value ? "text-amber-400 fill-amber-400" : "text-slate-600"}`} />
+                                <Star className={`w-4 h-4 ${star <= value ? "text-amber-400 fill-amber-400" : "text-slate-300"}`} />
                               </button>
                             ))}
                           </div>
@@ -950,7 +906,7 @@ export default function App() {
                       );
                     })}
                   </div>
-                </div>                </div>
+                </div>
 
               </motion.div>
             )}
@@ -963,88 +919,88 @@ export default function App() {
                 className="space-y-6"
               >
                 
-                <div className="border-b border-slate-800/80 pb-4">
-                  <span className="text-[10px] uppercase font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2 py-0.5 rounded tracking-wide">
+                <div className="border-b border-slate-200 pb-4">
+                  <span className="text-[10px] uppercase font-bold text-emerald-750 bg-emerald-50 border border-emerald-200 px-2.5 py-0.5 rounded tracking-wide">
                     Academy Graduation Portal
                   </span>
-                  <h2 className="text-xl font-extrabold text-white mt-1.5 tracking-tight">Hiring Readiness & Resource Hub</h2>
+                  <h2 className="text-xl font-extrabold text-slate-900 mt-1.5 tracking-tight">Hiring Readiness & Resource Hub</h2>
                 </div>
 
                 {/* Job Probability Predictor */}
-                <div className="bg-gradient-to-br from-indigo-900/30 via-slate-900/40 to-[#111827] border border-indigo-500/20 rounded-2xl p-6 relative overflow-hidden shadow-xl">
+                <div className="bg-gradient-to-br from-indigo-50 via-slate-50 to-emerald-50/20 border border-indigo-100 rounded-2xl p-6 relative overflow-hidden shadow-sm">
                   <div className="absolute top-0 right-0 p-6 opacity-5 pointer-events-none">
-                    <Award className="w-48 h-48 text-white" />
+                    <Award className="w-48 h-48 text-slate-800" />
                   </div>
                   
                   <div className="flex flex-col md:flex-row items-center gap-6">
-                    <div className="relative w-36 h-36 shrink-0 flex items-center justify-center rounded-full bg-[#0A0F1B] border-4 border-indigo-500/40 shadow-xl">
+                    <div className="relative w-36 h-36 shrink-0 flex items-center justify-center rounded-full bg-white border-4 border-indigo-200 shadow-sm">
                       <div className="text-center">
                         <span className="block text-[10px] font-bold text-slate-500 uppercase tracking-wider">Hiring Odds</span>
-                        <span className="text-3xl font-black text-emerald-400">{readinessPercentage}%</span>
+                        <span className="text-3xl font-black text-emerald-600">{readinessPercentage}%</span>
                       </div>
                     </div>
                     
                     <div className="space-y-2">
-                      <h3 className="text-lg font-black text-white">Junior Android Position Readiness Predictor</h3>
-                      <p className="text-xs text-slate-300 leading-relaxed">This predictive assessment calculates your current competitiveness based on syllabus hours logged, days finalized, self-comfort metrics, and mock project checks.</p>
-                      <div className="pt-2 text-xs text-slate-400 flex flex-wrap gap-x-4 gap-y-1">
-                        <span>• Complete all 120 Days: <strong className="text-emerald-400">+40%</strong></span>
-                        <span>• Deliver 5 Capstones: <strong className="text-emerald-400">+40%</strong></span>
-                        <span>• Comfort score over 4.0: <strong className="text-emerald-400">+20%</strong></span>
+                      <h3 className="text-lg font-black text-slate-900">Junior Android Position Readiness Predictor</h3>
+                      <p className="text-xs text-slate-600 leading-relaxed">This predictive assessment calculates your current competitiveness based on syllabus hours logged, days finalized, self-comfort metrics, and mock project checks.</p>
+                      <div className="pt-2 text-xs text-slate-500 flex flex-wrap gap-x-4 gap-y-1">
+                        <span>• Complete all 120 Days: <strong className="text-emerald-600">{readinessPercentage >= 40 ? "Done" : "Pending"} (+40%)</strong></span>
+                        <span>• Deliver 5 Capstones: <strong className="text-emerald-600">Pending (+40%)</strong></span>
+                        <span>• Comfort score over 4.0: <strong className="text-emerald-600">Pending (+20%)</strong></span>
                       </div>
                     </div>
                   </div>
                 </div>
 
                 {/* Common Beginner Mistakes */}
-                <div className="bg-slate-800/50 border border-slate-700/50 rounded-2xl p-6 shadow-xl space-y-4">
-                  <h3 className="text-sm font-bold text-white uppercase tracking-widest flex items-center gap-2">
+                <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-4">
+                  <h3 className="text-sm font-bold text-slate-800 uppercase tracking-widest flex items-center gap-2">
                     <AlertTriangle className="w-4.5 h-4.5 text-rose-500" />
                     Top Beginner Mistakes to Evade
                   </h3>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div className="bg-[#0A0F1B]/40 border border-slate-800 rounded-2xl p-5 space-y-2 hover:border-rose-500/20 transition-all">
-                      <span className="block text-xs font-bold text-rose-400 uppercase tracking-wide">1. Hardcoding Context references</span>
-                      <p className="text-xs text-slate-300 leading-normal">Storing static or VM-level context variables of destroyed Activites triggers massive memory leaks. Always emit events or use Application context.</p>
+                    <div className="bg-slate-50 border border-slate-200 rounded-2xl p-5 space-y-2 hover:border-rose-300/40 transition-all">
+                      <span className="block text-xs font-bold text-rose-700 uppercase tracking-wide">1. Hardcoding Context references</span>
+                      <p className="text-xs text-slate-600 leading-normal">Storing static or VM-level context variables of destroyed Activites triggers massive memory leaks. Always emit events or use Application context.</p>
                     </div>
-                    <div className="bg-[#0A0F1B]/40 border border-slate-800 rounded-2xl p-5 space-y-2 hover:border-rose-500/20 transition-all">
-                      <span className="block text-xs font-bold text-rose-400 uppercase tracking-wide">2. Main Thread network blocking</span>
-                      <p className="text-xs text-slate-300 leading-normal">Executing database inserts or API fetches on the main UI thread freezes screens, resulting in immediate app crashes (ANR). Always dispatch on background threads.</p>
+                    <div className="bg-slate-50 border border-slate-200 rounded-2xl p-5 space-y-2 hover:border-rose-300/40 transition-all">
+                      <span className="block text-xs font-bold text-rose-700 uppercase tracking-wide">2. Main Thread network blocking</span>
+                      <p className="text-xs text-slate-600 leading-normal">Executing database inserts or API fetches on the main UI thread freezes screens, resulting in immediate app crashes (ANR). Always dispatch on background threads.</p>
                     </div>
-                    <div className="bg-[#0A0F1B]/40 border border-slate-800 rounded-2xl p-5 space-y-2 hover:border-rose-500/20 transition-all">
-                      <span className="block text-xs font-bold text-rose-400 uppercase tracking-wide">3. Local State in recycled lists</span>
-                      <p className="text-xs text-slate-300 leading-normal">Storing mutable checkbox states directly inside dynamic list composables. Recycling scroll rows will scramble entries. Always hoist list state.</p>
+                    <div className="bg-slate-50 border border-slate-200 rounded-2xl p-5 space-y-2 hover:border-rose-300/40 transition-all">
+                      <span className="block text-xs font-bold text-rose-700 uppercase tracking-wide">3. Local State in recycled lists</span>
+                      <p className="text-xs text-slate-600 leading-normal">Storing mutable checkbox states directly inside dynamic list composables. Recycling scroll rows will scramble entries. Always hoist list state.</p>
                     </div>
-                    <div className="bg-[#0A0F1B]/40 border border-slate-800 rounded-2xl p-5 space-y-2 hover:border-rose-500/20 transition-all">
-                      <span className="block text-xs font-bold text-rose-400 uppercase tracking-wide">4. Hardcoding keys and secrets</span>
-                      <p className="text-xs text-slate-300 leading-normal">Committing release keystores or OAuth password strings directly to source code graphs. Always secure configs via gradle properties.</p>
+                    <div className="bg-slate-50 border border-slate-200 rounded-2xl p-5 space-y-2 hover:border-rose-300/40 transition-all">
+                      <span className="block text-xs font-bold text-rose-700 uppercase tracking-wide">4. Hardcoding keys and secrets</span>
+                      <p className="text-xs text-slate-600 leading-normal">Committing release keystores or OAuth password strings directly to source code graphs. Always secure configs via gradle properties.</p>
                     </div>
                   </div>
                 </div>
 
                 {/* Ultimate Reference Resource Guides */}
-                <div className="bg-slate-800/50 border border-slate-700/50 rounded-2xl p-6 shadow-xl space-y-4">
-                  <h3 className="text-sm font-bold text-white uppercase tracking-widest flex items-center gap-2">
-                    <BookMarked className="w-4.5 h-4.5 text-emerald-400" />
+                <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-4">
+                  <h3 className="text-sm font-bold text-slate-800 uppercase tracking-widest flex items-center gap-2">
+                    <BookMarked className="w-4.5 h-4.5 text-emerald-600" />
                     Lead Tech's Recommended Resources
                   </h3>
 
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4.5">
                     
                     <div className="space-y-2.5">
-                      <h4 className="text-xs font-bold text-slate-300 border-b border-slate-700/50 pb-1.5 uppercase tracking-wide">Highly Recommended Books</h4>
-                      <ul className="space-y-1 text-xs text-slate-400">
-                        <li>• <em className="text-slate-300">Kotlin in Action</em> - Dmitry Jemerov</li>
-                        <li>• <em className="text-slate-300">Clean Code</em> - Robert C. Martin</li>
-                        <li>• <em className="text-slate-300">Effective Java</em> - Joshua Bloch</li>
-                        <li>• <em className="text-slate-300">Clean Architecture</em> - Robert C. Martin</li>
+                      <h4 className="text-xs font-bold text-slate-800 border-b border-slate-200 pb-1.5 uppercase tracking-wide">Highly Recommended Books</h4>
+                      <ul className="space-y-1 text-xs text-slate-600">
+                        <li>• <em className="text-slate-800 font-medium">Kotlin in Action</em> - Dmitry Jemerov</li>
+                        <li>• <em className="text-slate-800 font-medium">Clean Code</em> - Robert C. Martin</li>
+                        <li>• <em className="text-slate-800 font-medium">Effective Java</em> - Joshua Bloch</li>
+                        <li>• <em className="text-slate-800 font-medium">Clean Architecture</em> - Robert C. Martin</li>
                       </ul>
                     </div>
 
                     <div className="space-y-2.5">
-                      <h4 className="text-xs font-bold text-slate-300 border-b border-slate-700/50 pb-1.5 uppercase tracking-wide">Highly Recommended Creators</h4>
-                      <ul className="space-y-1 text-xs text-slate-400">
+                      <h4 className="text-xs font-bold text-slate-800 border-b border-slate-200 pb-1.5 uppercase tracking-wide">Highly Recommended Creators</h4>
+                      <ul className="space-y-1 text-xs text-slate-600">
                         <li>• Philipp Lackner (YouTube)</li>
                         <li>• Stevdza-San (YouTube)</li>
                         <li>• CodingWithMitch (YouTube)</li>
@@ -1053,8 +1009,8 @@ export default function App() {
                     </div>
 
                     <div className="space-y-2.5">
-                      <h4 className="text-xs font-bold text-slate-300 border-b border-slate-700/50 pb-1.5 uppercase tracking-wide">Must-Follow Blogs & repos</h4>
-                      <ul className="space-y-1 text-xs text-slate-400">
+                      <h4 className="text-xs font-bold text-slate-800 border-b border-slate-200 pb-1.5 uppercase tracking-wide">Must-Follow Blogs & repos</h4>
+                      <ul className="space-y-1 text-xs text-slate-600">
                         <li>• Official Android Developers Blog</li>
                         <li>• ProAndroidDev (Medium community)</li>
                         <li>• android/nowinandroid (Official GitHub Repo)</li>
@@ -1073,108 +1029,6 @@ export default function App() {
         </section>
 
       </main>
-
-      {/* Floating Interactive AI Mentor Chat Box */}
-      <div className="fixed bottom-6 right-6 z-50">
-        
-        <AnimatePresence>
-          {isChatOpen && (
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95, y: 15 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.95, y: 15 }}
-              className="bg-[#111827] border border-slate-800/80 rounded-3xl shadow-2xl shadow-[#0A0F1B]/90 w-80 md:w-96 h-[480px] flex flex-col mb-4 overflow-hidden"
-            >
-              
-              {/* Chat Header */}
-              <div className="bg-slate-800/60 border-b border-slate-700/50 px-4 py-3 flex items-center justify-between">
-                <div className="flex items-center gap-2.5">
-                  <div className="w-8 h-8 rounded-lg bg-indigo-500/20 border border-indigo-500/30 flex items-center justify-center text-indigo-400">
-                    <User className="w-4 h-4" />
-                  </div>
-                  <div>
-                    <h4 className="text-xs font-bold text-white leading-tight">AI Android Mentor</h4>
-                    <span className="text-[9px] text-indigo-400 font-bold uppercase tracking-wider flex items-center gap-1">
-                      <span className="w-1.5 h-1.5 rounded-full bg-indigo-500 animate-pulse" />
-                      Active Lead
-                    </span>
-                  </div>
-                </div>
-                <button
-                  onClick={() => setIsChatOpen(false)}
-                  className="text-slate-400 hover:text-white text-xs font-extrabold px-1.5"
-                >
-                  ✕
-                </button>
-              </div>
-
-              {/* Chat Messages */}
-              <div className="flex-grow p-4 overflow-y-auto space-y-3.5 bg-slate-950/20">
-                {chatMessages.map((msg, idx) => (
-                  <div
-                    key={idx}
-                    className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"}`}
-                  >
-                    <div
-                      className={`max-w-[80%] rounded-2xl px-3.5 py-2.5 text-xs leading-relaxed ${
-                        msg.role === "user"
-                          ? "bg-indigo-600 text-white font-bold rounded-tr-none shadow-md shadow-indigo-600/10"
-                          : "bg-slate-800/60 text-slate-300 rounded-tl-none border border-slate-700/40"
-                      }`}
-                    >
-                      <MarkdownView text={msg.text} />
-                    </div>
-                  </div>
-                ))}
-                {isSendingMessage && (
-                  <div className="flex justify-start">
-                    <div className="bg-slate-800/60 border border-slate-700/40 rounded-2xl rounded-tl-none px-4 py-3 text-xs text-slate-400 flex items-center gap-2">
-                      <div className="flex gap-1">
-                        <span className="w-1.5 h-1.5 bg-indigo-400 rounded-full animate-bounce" />
-                        <span className="w-1.5 h-1.5 bg-indigo-400 rounded-full animate-bounce [animation-delay:0.2s]" />
-                        <span className="w-1.5 h-1.5 bg-indigo-400 rounded-full animate-bounce [animation-delay:0.4s]" />
-                      </div>
-                      <span>Mentor is typing...</span>
-                    </div>
-                  </div>
-                )}
-                <div ref={messagesEndRef} />
-              </div>
-
-              {/* Chat Input */}
-              <div className="p-3 bg-slate-900/80 border-t border-slate-800/80 flex gap-2">
-                <input
-                  type="text"
-                  value={userInput}
-                  onChange={(e) => setUserInput(e.target.value)}
-                  onKeyDown={(e) => {
-                    if (e.key === "Enter") handleSendMessage();
-                  }}
-                  placeholder="Ask a question about today's topic..."
-                  className="flex-grow bg-slate-950 border border-slate-800 text-xs rounded-xl px-3.5 py-2 text-slate-200 placeholder-slate-500 focus:outline-none focus:border-indigo-500/50"
-                />
-                <button
-                  onClick={handleSendMessage}
-                  disabled={!userInput.trim() || isSendingMessage}
-                  className="p-2 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl transition-all disabled:opacity-50 flex items-center justify-center shrink-0"
-                >
-                  <Send className="w-3.5 h-3.5" />
-                </button>
-              </div>
-
-            </motion.div>
-          )}
-        </AnimatePresence>
-
-        <button
-          onClick={() => setIsChatOpen(!isChatOpen)}
-          className="bg-indigo-600 text-white p-4 rounded-full shadow-2xl shadow-indigo-600/30 hover:bg-indigo-500 transition-all hover:scale-105 flex items-center justify-center gap-2 font-black text-xs uppercase tracking-wider"
-        >
-          <MessageSquare className="w-5 h-5" />
-          <span>Android Mentor</span>
-        </button>
-
-      </div>
 
     </div>
   );
